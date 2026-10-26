@@ -42,6 +42,9 @@ jobs:
       - run: pnpm lint
 
       - run: pnpm build
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL }}
+          NEXT_PUBLIC_UMAMI_WEBSITE_ID: ${{ vars.UMAMI_WEBSITE_ID }}
 
       - uses: actions/upload-pages-artifact@v5
         with:

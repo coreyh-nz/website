@@ -35,6 +35,8 @@ export const Navigation = () => {
                     <Link
                       href={link.href}
                       aria-label={`${link.label} (opens in new tab)`}
+                      data-umami-event="social-click"
+                      data-umami-event-platform={link.label}
                       {...(link.external && {
                         target: "_blank",
                         rel: "noopener",

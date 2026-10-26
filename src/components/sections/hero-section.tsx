@@ -98,6 +98,7 @@ export const HeroSection = () => {
                             target="_blank"
                             rel="noopener"
                             prefetch={false}
+                            data-umami-event="cv-open"
                           />
                         }
                         nativeButton={false}

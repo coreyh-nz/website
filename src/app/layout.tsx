@@ -7,6 +7,7 @@ import {
   JetBrains_Mono,
   Unbounded,
 } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 
 const unbounded = Unbounded({
@@ -45,6 +46,13 @@ const RootLayout = ({ children }: LayoutProps<"/">) => {
     >
       <body className="flex min-h-full flex-col">
         <MotionProvider>{children}</MotionProvider>
+        {site.analytics.umamiWebsiteId && (
+          <Script
+            src="https://cloud.umami.is/script.js"
+            data-website-id={site.analytics.umamiWebsiteId}
+            data-domains={new URL(site.url).hostname}
+          />
+        )}
       </body>
     </html>
   )

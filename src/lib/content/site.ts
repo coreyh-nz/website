@@ -7,7 +7,10 @@ import {
 import { SiteLink } from "./types"
 
 export const site = {
-  url: "https://coreyh.nz",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://coreyh.nz",
+  analytics: {
+    umamiWebsiteId: process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID,
+  },
   name: {
     first: "Corey",
     last: "Hines",
